@@ -1,26 +1,32 @@
-import React from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import React, { useState } from "react";
 import "./App.css";
-
-const containerStyle = {
-  width: "100%",
-  height: "600px",
-};
-
-const center = {
-  lat: 21.0285,
-  lng: 105.8542,
-};
+import MapComponent from "./MaComponent";
+import VideoModal from "./VideoModal";
 
 function App() {
+  const [videoUrl, setVideoUrl] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleMarkerClick = (url) => {
+    setVideoUrl(url);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setVideoUrl("");
+  };
+
   return (
     <div className="App">
-      <h1>WebGIS Đơn Giản với React và Google Maps</h1>
-      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={13}>
-          <Marker position={center} />
-        </GoogleMap>
-      </LoadScript>
+      <header className="App-header">
+        <MapComponent onMarkerClick={handleMarkerClick} />
+        <VideoModal
+          isOpen={isModalOpen}
+          onRequestClose={closeModal}
+          videoUrl={videoUrl}
+        />
+      </header>
     </div>
   );
 }
