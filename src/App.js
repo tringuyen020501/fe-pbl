@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import MapComponent from "./MaComponent";
+import MapComponent from "./MapComponent";
 import VideoModal from "./VideoModal";
 
 function App() {
