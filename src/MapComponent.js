@@ -19,7 +19,8 @@ const locations = [
   {
     id: 1,
     position: [16.074151466760846, 108.21651177362932],
-    videoUrl: "https://www.youtube.com/watch?v=FqJWMaJaKkM",
+    // videoUrl: "https://www.youtube.com/watch?v=FqJWMaJaKkM",
+    videoUrl: "https://www.youtube.com/watch?v=Fu3nDsqC1J0",
   },
   {
     id: 2,
