@@ -17,6 +17,7 @@ const VideoModal = ({ isOpen, onRequestClose, videoUrl }) => {
     >
       {isYouTube ? (
         <iframe
+          title="Unique Title"
           width="100%"
           height="400"
           src={videoUrl.replace("watch?v=", "embed/")}
