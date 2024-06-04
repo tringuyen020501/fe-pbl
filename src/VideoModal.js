@@ -1,4 +1,3 @@
-// src/VideoModal.js
 import React from "react";
 import Modal from "react-modal";
 import "./App.css";
@@ -21,7 +20,6 @@ const VideoModal = ({ isOpen, onRequestClose, videoUrl }) => {
           width="100%"
           height="400"
           src={videoUrl.replace("watch?v=", "embed/")}
-          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>

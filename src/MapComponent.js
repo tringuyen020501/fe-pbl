@@ -1,10 +1,8 @@
-// src/MapComponent.js
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-// URL icon tùy chỉnh
 const customIconUrl =
   "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png";
 const customIcon = new L.Icon({
@@ -56,9 +54,7 @@ const MapComponent = ({ onMarkerClick }) => {
               onMarkerClick(location.videoUrl);
             },
           }}
-        >
-          {/* <Popup>Click to view video.</Popup> */}
-        </Marker>
+        ></Marker>
       ))}
     </MapContainer>
   );
